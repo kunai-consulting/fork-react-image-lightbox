@@ -1478,7 +1478,7 @@ class ReactImageLightbox extends Component {
             : undefined
         }
         role="dialog"
-        aria-labelledby='"DialogName'
+        aria-labelledby="dialogName"
         {...reactModalProps}
       >
         <div // eslint-disable-line jsx-a11y/no-static-element-interactions
@@ -1517,7 +1517,7 @@ class ReactImageLightbox extends Component {
                 totalImageCount={images.length + 1}
               />
             ) : (
-              <div className="ril_title" id="DialogName">
+              <div className="ril_title" id="dialogName">
                 {imageTitle}
                 <div className="ril_status">
                   Image {imageIndex} of {images.length + 1}

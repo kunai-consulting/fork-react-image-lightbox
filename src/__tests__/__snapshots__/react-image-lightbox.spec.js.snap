@@ -62,7 +62,7 @@ exports[`Snapshot Testing Lightbox renders properly" 1`] = `
         aria-hidden="true"
       />
     }
-    aria-labelledby="\\"DialogName"
+    aria-labelledby="dialogName"
     ariaHideApp={true}
     bodyOpenClassName="ReactModal__Body--open"
     closeTimeoutMS={0}
@@ -182,7 +182,7 @@ exports[`Snapshot Testing Lightbox renders properly" 1`] = `
                 >
                   <div
                     class="ril_title"
-                    id="DialogName"
+                    id="dialogName"
                   >
                     <div
                       class="ril_status"
@@ -224,7 +224,7 @@ exports[`Snapshot Testing Lightbox renders properly" 1`] = `
             aria-hidden="true"
           />
         }
-        aria-labelledby="\\"DialogName"
+        aria-labelledby="dialogName"
         ariaHideApp={true}
         bodyOpenClassName="ReactModal__Body--open"
         closeTimeoutMS={0}
@@ -429,7 +429,7 @@ exports[`Snapshot Testing Lightbox renders properly" 1`] = `
               >
                 <div
                   className="ril_title"
-                  id="DialogName"
+                  id="dialogName"
                 >
                   <div
                     className="ril_status"
