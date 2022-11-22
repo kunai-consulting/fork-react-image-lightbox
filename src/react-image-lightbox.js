@@ -1436,6 +1436,7 @@ class ReactImageLightbox extends Component {
       overlay: {
         zIndex: 1000,
         backgroundColor: 'transparent',
+        display: 'block',
         ...reactModalStyle.overlay, // Allow style overrides via props
       },
       content: {
@@ -1476,6 +1477,8 @@ class ReactImageLightbox extends Component {
             ? global.window.document.body
             : undefined
         }
+        role="dialog"
+        aria-labelledby="dialogName"
         {...reactModalProps}
       >
         <div // eslint-disable-line jsx-a11y/no-static-element-interactions
@@ -1502,7 +1505,6 @@ class ReactImageLightbox extends Component {
             // Image holder
             className="ril-inner ril__inner"
             onClick={clickOutsideToClose ? this.closeIfClickInner : undefined}
-            aria-hidden="true"
           >
             {images}
           </div>
@@ -1515,7 +1517,7 @@ class ReactImageLightbox extends Component {
                 totalImageCount={images.length + 1}
               />
             ) : (
-              <div className="ril_title">
+              <div className="ril_title" id="dialogName">
                 {imageTitle}
                 <div className="ril_status">
                   Image {imageIndex} of {images.length + 1}
