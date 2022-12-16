@@ -367,7 +367,6 @@
   height: 34px;
   padding: 40px 30px;
   margin: auto;
-  cursor: pointer;
 }
 
 .ril__navButtonsThumbs:hover {
@@ -405,6 +404,9 @@
   max-height: 50px;
   max-width: 432px;
 }
+.ril__thumbNails:hover {
+  cursor: pointer;
+}
 
 .thumbNails img {
   display: inline;
@@ -415,6 +417,7 @@
 
 .thumbNails:hover {
   border: 2px solid gray;
+  cursor: pointer;
 }
 
 .thumbNailsactive {
