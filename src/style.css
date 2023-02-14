@@ -68,11 +68,13 @@
   margin: auto;
   cursor: pointer;
 }
+
 .ril__navButtons:hover {
   opacity: 1;
 }
+
 .ril__navButtons:active {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .ril__navButtonPrev {
@@ -190,7 +192,7 @@
   height: 35px;
   cursor: pointer;
   border: none;
-  opacity: 0.7;
+  opacity: 1;
 }
 .ril__builtinButton:hover {
   opacity: 1;
@@ -404,9 +406,6 @@
   max-height: 50px;
   max-width: 432px;
 }
-.ril__thumbNails:hover {
-  cursor: pointer;
-}
 
 .thumbNails img {
   display: inline;
@@ -417,9 +416,9 @@
 
 .thumbNails:hover {
   border: 2px solid gray;
-  cursor: pointer;
 }
 
 .thumbNailsactive {
   border: 2px solid rgb(2, 118, 177);
+  cursor: pointer;
 }
