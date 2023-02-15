@@ -409,6 +409,7 @@
 
 .thumbNails img {
   display: inline;
+  cursor: pointer;
 }
 .thumbNails {
   border: 2px solid transparent;
