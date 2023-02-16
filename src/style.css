@@ -417,6 +417,7 @@
 
 .thumbNails:hover {
   border: 2px solid gray;
+  cursor: pointer;
 }
 
 .thumbNailsactive {
