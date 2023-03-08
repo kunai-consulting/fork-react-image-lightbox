@@ -64,16 +64,17 @@
   bottom: 0;
   width: 20px;
   height: 34px;
-  padding: 40px 30px;
+  padding: 40px 40px;
   margin: auto;
   cursor: pointer;
-  opacity: 0.7;
 }
+
 .ril__navButtons:hover {
   opacity: 1;
 }
+
 .ril__navButtons:active {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .ril__navButtonPrev {
@@ -191,7 +192,7 @@
   height: 35px;
   cursor: pointer;
   border: none;
-  opacity: 0.7;
+  opacity: 1;
 }
 .ril__builtinButton:hover {
   opacity: 1;
@@ -368,8 +369,11 @@
   height: 34px;
   padding: 40px 30px;
   margin: auto;
+}
+
+.ril__navButtonsThumbs:hover {
+  background-color: rgba(244, 244, 244, 0.093);
   cursor: pointer;
-  opacity: 0.7;
 }
 
 .ril__loadingContainer__icon {
@@ -405,6 +409,7 @@
 
 .thumbNails img {
   display: inline;
+  cursor: pointer;
 }
 .thumbNails {
   border: 2px solid transparent;
@@ -412,8 +417,10 @@
 
 .thumbNails:hover {
   border: 2px solid gray;
+  cursor: pointer;
 }
 
 .thumbNailsactive {
   border: 2px solid rgb(2, 118, 177);
+  cursor: pointer;
 }
