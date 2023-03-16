@@ -28,6 +28,11 @@ jobs:
           node-version: 14
           registry-url: https://npm.pkg.github.com/
       - run: yarn
-      - run: npm publish
+      - run: |
+          if [[ $(npx -c 'echo $npm_package_version') == *alpha* ]]; then
+            npm publish --tag alpha
+          else
+            npm publish
+          fi
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
