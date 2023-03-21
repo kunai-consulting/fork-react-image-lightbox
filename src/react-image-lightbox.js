@@ -1549,7 +1549,7 @@ class ReactImageLightbox extends Component {
                   }
                 />
               )}
-            </div>{' '}
+            </div>
           </div>
           {prevSrc && !isMobile ? (
             <button // Move to previous image button
@@ -1600,27 +1600,39 @@ class ReactImageLightbox extends Component {
             <div className="ril__thumbNailsContainer">
               <div className="ril__thumbNails">
                 {/* TODO previous and Next thumbnail images should show more thumbs if available */}
-                {prevSrc && (
-                  <button // Move to previous image button
-                    type="button"
-                    className={`ril__thumbNails ril__navButtonsThumbs${
-                      this.props.thumbnailArrowLeft ? '' : 'ril__navButtonPrev'
-                    }`}
-                    key="prev"
-                    aria-label={this.props.prevLabel}
-                    title={this.props.prevLabel}
-                    onClick={
-                      !this.isAnimating() ? this.requestMovePrev : undefined
-                    } // Ignore clicks during animation
-                    style={
-                      this.props.thumbnailArrowLeft
-                        ? {
-                            background: `url('${this.props.thumbnailArrowLeft}') no-repeat center`,
-                          }
-                        : {}
-                    }
-                  />
-                )}
+                {prevSrc &&
+                  (this.props.directionalButtonComponent ? (
+                    <this.props.directionalButtonComponent
+                      onClickHandler={
+                        !this.isAnimating() ? this.requestMovePrev : undefined
+                      }
+                      direction="left"
+                      ariaLabel={this.props.prevLabel}
+                      {...this.props.directionalButtonComponentProps}
+                    />
+                  ) : (
+                    <button // Move to previous image button
+                      type="button"
+                      className={`ril__thumbNails ril__navButtonsThumbs${
+                        this.props.thumbnailArrowLeft
+                          ? ''
+                          : 'ril__navButtonPrev'
+                      }`}
+                      key="prev"
+                      aria-label={this.props.prevLabel}
+                      title={this.props.prevLabel}
+                      onClick={
+                        !this.isAnimating() ? this.requestMovePrev : undefined
+                      } // Ignore clicks during animation
+                      style={
+                        this.props.thumbnailArrowLeft
+                          ? {
+                              background: `url('${this.props.thumbnailArrowLeft}') no-repeat center`,
+                            }
+                          : {}
+                      }
+                    />
+                  ))}
                 {this.props.thumbnailImages.map((img, index) => (
                   <img
                     className={`thumbNails${
@@ -1642,27 +1654,39 @@ class ReactImageLightbox extends Component {
                   />
                 ))}
 
-                {nextSrc && (
-                  <button // Move to next image button
-                    type="button"
-                    className={`ril__thumbNails ril__navButtonsThumbs${
-                      this.props.thumbnailArrowRight ? '' : 'ril__navButtonNext'
-                    }`}
-                    key="next"
-                    aria-label={this.props.nextLabel}
-                    title={this.props.nextLabel}
-                    onClick={
-                      !this.isAnimating() ? this.requestMoveNext : undefined
-                    } // Ignore clicks during animation
-                    style={
-                      this.props.thumbnailArrowRight
-                        ? {
-                            background: `url('${this.props.thumbnailArrowRight}') no-repeat center`,
-                          }
-                        : {}
-                    }
-                  />
-                )}
+                {nextSrc &&
+                  (this.props.directionalButtonComponent ? (
+                    <this.props.directionalButtonComponent
+                      onClickHandler={
+                        !this.isAnimating() ? this.requestMoveNext : undefined
+                      }
+                      direction="right"
+                      ariaLabel={this.props.nextLabel}
+                      {...this.props.directionalButtonComponentProps}
+                    />
+                  ) : (
+                    <button // Move to next image button
+                      type="button"
+                      className={`ril__thumbNails ril__navButtonsThumbs${
+                        this.props.thumbnailArrowRight
+                          ? ''
+                          : 'ril__navButtonNext'
+                      }`}
+                      key="next"
+                      aria-label={this.props.nextLabel}
+                      title={this.props.nextLabel}
+                      onClick={
+                        !this.isAnimating() ? this.requestMoveNext : undefined
+                      } // Ignore clicks during animation
+                      style={
+                        this.props.thumbnailArrowRight
+                          ? {
+                              background: `url('${this.props.thumbnailArrowRight}') no-repeat center`,
+                            }
+                          : {}
+                      }
+                    />
+                  ))}
               </div>
             </div>
           )}
@@ -1825,6 +1849,10 @@ ReactImageLightbox.propTypes = {
   closeButtonComponent: PropTypes.element,
   closeButtonComponentProps: PropTypes.shape({}),
 
+  // custom directional button component
+  directionalButtonComponent: PropTypes.element,
+  directionalButtonComponentProps: PropTypes.shape({}),
+
   // image header component
   imageHeaderComponent: PropTypes.element,
 
@@ -1877,6 +1905,8 @@ ReactImageLightbox.defaultProps = {
   thumbnailImages: [],
   closeButtonComponent: null,
   closeButtonComponentProps: {},
+  directionalButtonComponent: null,
+  directionalButtonComponentProps: {},
   imageHeaderComponent: null,
   maxHeightOffset: 0,
   maxWidthOffset: 0,
