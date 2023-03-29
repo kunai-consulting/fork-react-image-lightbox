@@ -1846,21 +1846,21 @@ ReactImageLightbox.propTypes = {
   thumbnailImages: PropTypes.arrayOf(PropTypes.string),
 
   // custom close button component
-  closeButtonComponent: PropTypes.element,
+  closeButtonComponent: PropTypes.func,
   closeButtonComponentProps: PropTypes.shape({}),
 
   // custom directional button component
-  directionalButtonComponent: PropTypes.element,
+  directionalButtonComponent: PropTypes.func,
   directionalButtonComponentProps: PropTypes.shape({}),
 
   // image header component
-  imageHeaderComponent: PropTypes.element,
+  imageHeaderComponent: PropTypes.func,
 
   // offset values to set the spacing properly between main image and thumbnails
   maxHeightOffset: PropTypes.number,
   maxWidthOffset: PropTypes.number,
-  thumbnailArrowLeft: PropTypes.element,
-  thumbnailArrowRight: PropTypes.element,
+  thumbnailArrowLeft: PropTypes.func,
+  thumbnailArrowRight: PropTypes.func,
   widthBreakPoint: PropTypes.number,
 };
 
@@ -1903,15 +1903,15 @@ ReactImageLightbox.defaultProps = {
   prevButtonImage: null,
   closeButtonImage: null,
   thumbnailImages: [],
-  closeButtonComponent: null,
+  closeButtonComponent: () => {},
   closeButtonComponentProps: {},
-  directionalButtonComponent: null,
+  directionalButtonComponent: () => {},
   directionalButtonComponentProps: {},
-  imageHeaderComponent: null,
+  imageHeaderComponent: () => {},
   maxHeightOffset: 0,
   maxWidthOffset: 0,
-  thumbnailArrowLeft: null,
-  thumbnailArrowRight: null,
+  thumbnailArrowLeft: () => {},
+  thumbnailArrowRight: () => {},
   widthBreakPoint: 960,
 };
 
