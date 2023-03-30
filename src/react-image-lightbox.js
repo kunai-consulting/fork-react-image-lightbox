@@ -1599,7 +1599,6 @@ class ReactImageLightbox extends Component {
           {!isMobile && (
             <div className="ril__thumbNailsContainer">
               <div className="ril__thumbNails">
-                {/* TODO previous and Next thumbnail images should show more thumbs if available */}
                 {prevSrc &&
                   (this.props.directionalButtonComponent ? (
                     <this.props.directionalButtonComponent
@@ -1644,6 +1643,7 @@ class ReactImageLightbox extends Component {
                       borderRadius: '4px',
                     }}
                     src={img}
+                    key={img}
                     role="presentation"
                     alt={img.caption}
                     onClick={() => {
@@ -1843,6 +1843,8 @@ ReactImageLightbox.propTypes = {
   nextButtonImage: PropTypes.string,
   prevButtonImage: PropTypes.string,
   closeButtonImage: PropTypes.string,
+  thumbnailArrowLeft: PropTypes.string,
+  thumbnailArrowRight: PropTypes.string,
   thumbnailImages: PropTypes.arrayOf(PropTypes.string),
 
   // custom close button component
@@ -1859,8 +1861,6 @@ ReactImageLightbox.propTypes = {
   // offset values to set the spacing properly between main image and thumbnails
   maxHeightOffset: PropTypes.number,
   maxWidthOffset: PropTypes.number,
-  thumbnailArrowLeft: PropTypes.func,
-  thumbnailArrowRight: PropTypes.func,
   widthBreakPoint: PropTypes.number,
 };
 
