@@ -10,6 +10,8 @@ exports[`Snapshot Testing Lightbox renders properly" 1`] = `
   closeButtonComponentProps={Object {}}
   closeButtonImage={null}
   closeLabel="Close lightbox"
+  directionalButtonComponent={null}
+  directionalButtonComponentProps={Object {}}
   discourageDownloads={false}
   enableZoom={true}
   imageCaption={null}
@@ -202,7 +204,6 @@ exports[`Snapshot Testing Lightbox renders properly" 1`] = `
                       type="button"
                     />
                   </div>
-                   
                 </div>
                  
                 <div
@@ -452,7 +453,6 @@ exports[`Snapshot Testing Lightbox renders properly" 1`] = `
                     type="button"
                   />
                 </div>
-                 
               </div>
                
               <div
