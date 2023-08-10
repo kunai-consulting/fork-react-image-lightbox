@@ -1633,25 +1633,38 @@ class ReactImageLightbox extends Component {
                     />
                   ))}
                 {this.props.thumbnailImages.map((img, index) => (
-                  <img
+                  <button
+                    style={{
+                      margin: '14px',
+                      paddingTop: '3px',
+                      paddingRight: '3px',
+                      paddingBottom: '0px',
+                      paddingLeft: '3px',
+                      borderRadius: '4px',
+                    }}
+                    type="button"
+                    aria-label="view fullsize image for this thumbnail"
                     className={`thumbNails${
                       imageIndex === index + 1 ? 'active' : ''
                     }`}
-                    style={{
-                      margin: '14px',
-                      padding: '2px',
-                      borderRadius: '4px',
-                    }}
-                    src={img}
-                    key={img}
-                    role="presentation"
-                    alt={img.caption}
                     onClick={() => {
                       return !this.isAnimating()
                         ? this.requestMoveIndex({ index })
                         : undefined;
                     }}
-                  />
+                    onKeyPress={() => {
+                      return !this.isAnimating()
+                        ? this.requestMoveIndex({ index })
+                        : undefined;
+                    }}
+                  >
+                    <img
+                      src={img}
+                      key={img}
+                      role="presentation"
+                      alt={img.caption}
+                    />
+                  </button>
                 ))}
 
                 {nextSrc &&
