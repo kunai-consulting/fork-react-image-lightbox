@@ -1465,6 +1465,7 @@ class ReactImageLightbox extends Component {
             this.outerEl.current.focus();
           }
           document.body.style.overflow = 'hidden';
+          document.body.removeAttribute('aria-hidden');
           onAfterOpen();
         }}
         onAfterClose={() => {
